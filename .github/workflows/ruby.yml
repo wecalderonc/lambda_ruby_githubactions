@@ -46,7 +46,7 @@ jobs:
       run: sudo rm -r vendor/bundle/ruby/2.5.0/cache
     - name: Zip
       run: |
-        apt-get update && apt-get install -y zip && \
+        sudo apt-get update && sudo apt-get install -y zip && \
         zip -9 -r lambda_function.zip lambda_function.rb vendor app config lib
     - name: Upload
       run: aws lambda update-function-code --function-name  arn:aws:lambda:us-east-1:442669662331:function:Lambda-Example --zip-file fileb://lambda_function.zip"
