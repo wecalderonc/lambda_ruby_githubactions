@@ -32,5 +32,4 @@ end
 
 # DB stack
 gem 'sequel'
-gem 'pg'
 gem 'rake'
