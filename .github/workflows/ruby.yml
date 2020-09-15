@@ -41,7 +41,7 @@ jobs:
       run: bundle exec rake
 
     - name: Docker run
-      run: docker run -it --rm -v "$PWD":/var/task lambci/lambda:build-ruby2.5 bundle install --without test development --path vendor/bundle
+      run: docker run --rm -v "$PWD":/var/task lambci/lambda:build-ruby2.5 bundle install --without test development --path vendor/bundle
     - name: Delete cache 
       run: rm -r vendor/bundle/ruby/2.5.0/cache
     - name: Zip
